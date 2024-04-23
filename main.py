@@ -21,6 +21,7 @@ def get_weather(message):
         temp = data['main']['temp']
         bot.reply_to(message, f"The weather in {data['name']} is {temp}°C")
 
+
         image = 'warm.png' if int(temp) >= 10.0 else 'cold.jpg'
         file = open(image, 'rb')
         bot.send_photo(message.chat.id, file)
